@@ -1,1 +1,4 @@
-<p>todo-add works!</p>
+<div style="display: flex; gap: 8px; margin-bottom: 16px;">
+    <input nz-input placeholder="新增任務..." [(ngModel)]="title" (keyup.enter)="addTask()" [disabled]="loading" />
+    <button nz-button nzType="primary" (click)="addTask()" [nzLoading]="loading">新增</button>
+</div>

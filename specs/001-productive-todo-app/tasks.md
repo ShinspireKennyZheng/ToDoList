@@ -90,11 +90,11 @@
 
 ## 階段 11：測試 (Testing)
 
-- [ ] T028 [Test] 設定 Playwright 測試環境
-- [ ] T029 [Test] 撰寫 US1 (建立) 與 US2 (檢視) 的 E2E 測試
-- [ ] T030 [Test] 撰寫 US3 (狀態) 與 US4 (編輯) 的 E2E 測試
-- [ ] T031 [Test] 撰寫 US5 (刪除) 與 US6 (篩選) 的 E2E 測試
-- [ ] T032 [Test] 撰寫 US7 (即時同步) 的多視窗 E2E 測試
+- [x] T028 [Test] 設定 Playwright 測試環境
+- [x] T029 [Test] 撰寫 US1 (建立) 與 US2 (檢視) 的 E2E 測試
+- [x] T030 [Test] 撰寫 US3 (狀態) 與 US4 (編輯) 的 E2E 測試
+- [x] T031 [Test] 撰寫 US5 (刪除) 與 US6 (篩選) 的 E2E 測試
+- [x] T032 [Test] 撰寫 US7 (即時同步) 的多視窗 E2E 測試
 
 ## 相依性圖表 (Dependency Graph)
 

@@ -22,7 +22,6 @@ registerLocaleData(zh);
     TodoModule,
     FormsModule
   ],
-  ],
   providers: [
     { provide: NZ_I18N, useValue: zh_TW },
     provideAnimationsAsync(),

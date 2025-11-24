@@ -46,7 +46,10 @@ export class TaskService {
             .single()
             .then(({ data, error }) => {
                 if (error) throw error;
-                return data as Task;
+                const newTask = data as Task;
+                const currentTasks = this.tasksSubject.value;
+                this.tasksSubject.next([newTask, ...currentTasks]);
+                return newTask;
             });
 
         return from(promise);
@@ -61,7 +64,10 @@ export class TaskService {
             .single()
             .then(({ data, error }) => {
                 if (error) throw error;
-                return data as Task;
+                const updatedTask = data as Task;
+                const currentTasks = this.tasksSubject.value.map(t => t.id === id ? updatedTask : t);
+                this.tasksSubject.next(currentTasks);
+                return updatedTask;
             });
         return from(promise);
     }
@@ -75,7 +81,10 @@ export class TaskService {
             .single()
             .then(({ data, error }) => {
                 if (error) throw error;
-                return data as Task;
+                const updatedTask = data as Task;
+                const currentTasks = this.tasksSubject.value.map(t => t.id === id ? updatedTask : t);
+                this.tasksSubject.next(currentTasks);
+                return updatedTask;
             });
         return from(promise);
     }
@@ -87,6 +96,8 @@ export class TaskService {
             .eq('id', id)
             .then(({ error }) => {
                 if (error) throw error;
+                const currentTasks = this.tasksSubject.value.filter(t => t.id !== id);
+                this.tasksSubject.next(currentTasks);
             });
         return from(promise);
     }
