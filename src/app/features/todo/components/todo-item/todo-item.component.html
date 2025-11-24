@@ -1,0 +1,24 @@
+<nz-list-item (click)="openEditModal()" style="cursor: pointer;">
+    <nz-list-item-meta [nzTitle]="nzTitle" [nzDescription]="task.description || ''" [nzAvatar]="checkbox">
+        <ng-template #checkbox>
+            <div (click)="$event.stopPropagation()">
+                <label nz-checkbox [ngModel]="task.is_completed" (ngModelChange)="onStatusChange($event)"></label>
+            </div>
+        </ng-template>
+        <ng-template #nzTitle>
+            <span [style.text-decoration]="task.is_completed ? 'line-through' : 'none'">
+                {{ task.title }}
+            </span>
+        </ng-template>
+    </nz-list-item-meta>
+    <ul nz-list-item-actions>
+        <nz-list-item-action>
+            <a (click)="deleteTask($event)" style="color: #ff4d4f;">刪除</a>
+        </nz-list-item-action>
+    </ul>
+</nz-list-item>
+
+<ng-template #editModalContent>
+    <input nz-input placeholder="標題" [(ngModel)]="editTitle" style="margin-bottom: 8px;" />
+    <textarea nz-input placeholder="描述" [(ngModel)]="editDescription" rows="4"></textarea>
+</ng-template>

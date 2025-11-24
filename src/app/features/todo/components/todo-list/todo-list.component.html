@@ -1,0 +1,20 @@
+<div style="margin-bottom: 16px; text-align: center;">
+    <nz-radio-group [(ngModel)]="filter" [nzButtonStyle]="'solid'">
+        <label nz-radio-button nzValue="all">全部</label>
+        <label nz-radio-button nzValue="active">未完成</label>
+        <label nz-radio-button nzValue="completed">已完成</label>
+    </nz-radio-group>
+</div>
+
+<nz-list [nzDataSource]="filteredTasks" [nzRenderItem]="item" [nzLoading]="loading" [nzNoResult]="emptyState">
+    <ng-template #item let-task>
+        <app-todo-item [task]="task"></app-todo-item>
+    </ng-template>
+</nz-list><ng-template #emptyState>
+    <nz-empty nzNotFoundImage="https://gw.alipayobjects.com/zos/antfincdn/ZHrcdLPrvN/empty.svg"
+        [nzNotFoundContent]="contentTpl">
+        <ng-template #contentTpl>
+            <span>暫無任務，快來新增一個吧！</span>
+        </ng-template>
+    </nz-empty>
+</ng-template>
