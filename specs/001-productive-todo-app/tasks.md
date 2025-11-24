@@ -88,6 +88,14 @@
 - [ ] T026 [P] 全域樣式調整與響應式設計優化 `src/styles.less`
 - [ ] T027 [P] 執行 Lighthouse 測試並優化無障礙性 (A11y)
 
+## 階段 11：測試 (Testing)
+
+- [ ] T028 [Test] 設定 Playwright 測試環境
+- [ ] T029 [Test] 撰寫 US1 (建立) 與 US2 (檢視) 的 E2E 測試
+- [ ] T030 [Test] 撰寫 US3 (狀態) 與 US4 (編輯) 的 E2E 測試
+- [ ] T031 [Test] 撰寫 US5 (刪除) 與 US6 (篩選) 的 E2E 測試
+- [ ] T032 [Test] 撰寫 US7 (即時同步) 的多視窗 E2E 測試
+
 ## 相依性圖表 (Dependency Graph)
 
 ```mermaid
@@ -103,6 +111,7 @@ graph TD
     US4 --> Polish(Phase 10: Polish)
     US5 --> Polish
     US6 --> Polish
+    Polish --> Testing(Phase 11: Testing)
 ```
 
 ## 實作策略
